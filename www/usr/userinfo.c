@@ -39,8 +39,8 @@ int main(int argc,char **argv)
 	}
      
 	do { 
-		fgets(buf,sizeof(buf),fp);
-		printf("%s <br>", buf);
+		if (fgets(buf,sizeof(buf),fp))
+			printf("%s <br>", buf);
 	} while ( feof(fp) == 0);
 
 	printf("</div><hr></div></body></html>\n");

@@ -98,9 +98,8 @@ static int do_socket(void)
  */
 static int do_bind(int fd, struct sockaddr *sadd, int len)
 {
-	int fb;
-	fb = bind(fd, (struct sockaddr *)sadd, len);
-	if (fd < 0){
+	int fb = bind(fd, (struct sockaddr *)sadd, len);
+	if (fb < 0){
 		switch (errno) {
 		case EADDRINUSE:
 			write_log("The given address is already in use\n", 0);

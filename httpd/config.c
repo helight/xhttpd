@@ -205,7 +205,7 @@ static int read_line(int fd, char *bufv)
 	int ret = 0;
 	int i = 0;
 	char ch = '\0';
-	memset(bufv, '\0', sizeof(bufv));
+	memset(bufv, '\0', strlen(bufv));
 	if((ret = read(fd, &ch, 1)) == 0)
 		return EOF;
 	while(ch != '\n' && ret != 0){
@@ -246,7 +246,7 @@ static void check_config(struct server_env *s_env)
 	}
 	if((set_mod & SET_WEB_ROOT) == 0){
 		char *tmp = (char *)WEB_ROOT;
-	        strncpy(s_env->root_dir, tmp,strlen(tmp));
+	        strncpy(s_env->root_dir, tmp, strlen(tmp));
         	set_mod |= SET_WEB_ROOT; 
 	}
 	if((set_mod & SET_DEFAULT_DOC) == 0){

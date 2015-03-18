@@ -40,11 +40,12 @@ int main(int args, char *argv[])
 	}
 	
 	while (!feof(fp)) {
-		fread(&user,sizeof(struct usr),1,fp);
-		if (!(strcmp(user.id, id))) {
-			if(!(strcmp(user.pwd,MDString(pwd)))){
-				flag = 0;
-				break ;
+		if (sizeof(struct usr) == fread(&user,sizeof(struct usr),1,fp)) {
+			if (!(strcmp(user.id, id))) {
+				if(!(strcmp(user.pwd,MDString(pwd)))){
+					flag = 0;
+					break ;
+				}
 			}
 		}
 	}
@@ -59,11 +60,11 @@ int main(int args, char *argv[])
                 printf("can not open! index.htm\n");
                 return -1;
         }
-   
-        do { 
-                fgets(buf, sizeof(buf),fp);
-                printf("%s", buf);
-        } while (feof(fp) == 0);
+
+	do { 
+		if (fgets(buf, sizeof(buf),fp))
+			printf("%s", buf);
+	} while (feof(fp) == 0);
 
         fclose(fp);
 

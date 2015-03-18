@@ -285,7 +285,7 @@ static void response_cgi_post(struct user_info *new_user)
 		close(fp[0]);
 		if (new_user->values) {
 			ret = write(fp[1], new_user->values, strlen(new_user->values));
-			debug_print("ret: %d values:%d \n", ret, strlen(new_user->values) - 1);
+			debug_print("ret: %d values:%d \n", ret, (int)(strlen(new_user->values) - 1));
 			ret = write(fp[1], "\r\n\r\n\r\n\r\n", 4);
 		} else {
 			ret = write(fp[1], "NULL", 5);
@@ -349,7 +349,7 @@ static void set_cgi_common_env(struct user_info *new_user)
 			setenv(REQUEST_METHOD, "POST", 1);
 			if (new_user->values) {
 				char buf[32];
-				snprintf(buf, sizeof(buf), "%d", strlen(new_user->values));
+				snprintf(buf, sizeof(buf), "%d", (int)strlen(new_user->values));
 				setenv(CONTENT_LENGTH, buf, 1);
 			} else
 				setenv(CONTENT_LENGTH, "0", 1);
@@ -358,7 +358,7 @@ static void set_cgi_common_env(struct user_info *new_user)
 			setenv(REQUEST_METHOD, "GET", 1);
 			if (new_user->values) {
 				char buf[32];
-				snprintf(buf, sizeof(buf), "%d", strlen(new_user->values));
+				snprintf(buf, sizeof(buf), "%d", (int)strlen(new_user->values));
 				setenv(Q_STRING, new_user->values, 1);
 				setenv(CONTENT_LENGTH, buf, 1);
 			} else

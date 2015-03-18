@@ -67,7 +67,7 @@ static int read_request_msg(int connfd)
 	int n = 0;
 	
 	memset(msg, 0, sizeof(msg));
-	debug_print("the length of msg: %d\n", sizeof(msg));
+	debug_print("the length of msg: %d\n", (int)sizeof(msg));
 	/*
 	if (read(connfd, msg, sizeof(msg)-1) <= 0) {
 		debug_print("\nUnkown request\t\t");

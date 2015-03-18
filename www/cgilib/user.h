@@ -11,12 +11,13 @@ int find_user(FILE *fp,char *id)
 	int flag = 1;
 	struct usr user;
 	while (!feof(fp)){
-		fread(&user,sizeof(struct usr),1,fp);
- 		if (!(strcmp(id,user.id))){
-         		flag = 0;
-         		break;
+		if (sizeof(user) == fread(&user,sizeof(struct usr),1,fp)) {
+			if (!(strcmp(id, user.id))){
+				flag = 0;
+				break;
+			}
+			ret++;
 		}
-		ret++;
 	}
 	if (flag == 1) {
 		ret = -1;
