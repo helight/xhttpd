@@ -1,0 +1,75 @@
+/*
+ * XiYou Simple HTTP server
+ *
+ * Copyright (c) 2008-~  Xiyou Linux Group
+ *
+ * This source code is released for free distribution under the terms of the
+ * GNU General Public License.
+ *
+ * file name: HOWTO
+ * modify date: 2008-11-10
+ * modify date: 2009-12-01
+ * Author: helight.xu@gmail.com
+ *
+ * Description:
+ */
+
+A: Intro this xhttpd system
+	1: writed for embedded Linux system.
+	2: Get or set the information of the embedded Linux system.
+	3: Support the http 1.0/1.1 .
+	4: Support the CGI programming.
+	5: Support the special CGI --- XCGI, only used in this system.
+
+B: Run this xhttpd system
+
+	1: run "make" in the top folder. then it will make the "xhttpd".
+	2: run "./xhttpd" and make sure the folder "www" stay together with "xhttpd".
+	3: open your brows and typed the follow URL "http://127.0.0.1:8080".
+	4: And now you got ? Just click....
+	5: OK....
+	6: Initial User name and Passwd: admin 123456
+
+C: Intor folders and files in xhttpd system
+	Coding_Style	: Define the coding style
+	COPYING	: The GPL v2 file
+	CREDITS	: People ever worked for this program
+	doc		: The documents of this program
+	HOWTO		: Intorduce of this program
+	httpd		: Xhttp web server
+	make.conf	: Configure file for make
+	Makefile	: The Main Makefile
+	TODO		: What todo next
+	www		: All web pages , cgi programs , xcgi programs...
+	xhttp.conf	: The configure file for xhttpd
+D: Intor "www" forder for writing code in this system
+	cgilib		: The library for cgi and xcgi programming
+	demo		: Some test programs
+	dev		: Get or set the information of the device
+	disk		: Get or set the information of the disks
+	env		: Get or set the information of the system env
+	fs		: Get or set the information of the file system
+	img		: pictures of css files for web pages
+	index.c	: The main contral file and gcc to index.xcgi
+	index.htm	: The main show contral panls file
+	login.htm	: The main index file and login interface
+	main.htm	: Main show file to show welcome to
+	Makefile	: Makefile for this foder
+	net		: Get or set the information of the net device or protorel
+	ps		: Get or set the information of the process
+	sys		: Get or set the information of the other subsystem
+	usr		: Get or set the information of the users
+	xhttpd.log	: The log file of xhttpd
+
+E: Write "hello world" is xhttpd system
+	1:
+
+
+
+
+
+
+
+
+
+

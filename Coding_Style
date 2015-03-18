@@ -1,0 +1,289 @@
+/*
+ * XiYou Simple HTTP server
+ *
+ * Copyright (c) 2008-~  Xiyou Linux Group
+ *
+ * This source code is released for free distribution under the terms of the
+ * GNU General Public License.
+ *
+ * file name: Coding_Style
+ * modify date: 2008-11-18
+ * modify date: 2009-12-04
+ * Author: helight.xu@gmail.com
+ *
+ * Program definitions:
+ */
+
+0. 总述
+
+0.1. 代码的每一行都要有明显的缩进，并且要全部使用Tab缩进，一个Tab长度为8。不要
+     使用8个空格代替。
+
+0.2. 函数最好短小精悍，一个函数最好只做一件事，而且函数中的变量一般不要超过10个。
+
+0.3. 函数内部变量定义和程序之间要有一个空行。
+
+示例如下：
+void fun(int a, int b, int c)
+{
+	int m；
+	
+	m = hello();
+	if (m)
+		...
+	else
+		...
+}
+	
+	
+1. 换行
+
+1.1 原则上每行程序不要超过80个字符，万一超过80个字符，则应该在合适的位置折行，
+    以清晰，容易理解为标准。例如：
+
+正确写法：
+void fun(int a, int b, int c)
+{
+	if (condition)
+		printk(KERN_WARNING "Warning this is a long printk with "
+						"3 parameters a: %u b: %u "
+						"c: %u \n", a, b, c);
+	else
+		next_statement;
+}
+
+void write_boundary_block(struct block_device *bdev,
+                       sector_t bblock, unsigned blocksize)
+{
+
+}
+
+1.2. 多行宏定义，'\'应该对齐。
+
+示例如下：
+#define this_is_a_long_macro(x)	\
+	foo((x));		\
+	bar((x));		\
+	baz((x))	
+				
+1.3. 源文件中不得有多余的空白，空行和非空行的行尾不应有空白。
+
+1.4. 同一行不允许写多条短语句。
+
+如下是不规范的写法：
+	c = a;a = b;b = c;
+
+1.5. if、for、do、while、case、switch、default等语句独占一行。且if、for、do、
+     while等的执行语句无论长短必须加{}。
+
+示例如下：
+	for (;;) {
+		;
+	}
+
+1.6. 函数开始和结束的{}应该独占一行，且对齐。
+
+示例如下：
+int main()
+{
+	/*Code*/
+}
+		
+1.7. 除函数开始和结束的{}外，其t它的{均为每行最后一个字符，}独占一行且于其所包
+     含的代码缩进相同,如果是if else语句或是do while语句，最后一个｝要与结束或是
+     连接语句各占一行。如：
+	
+a.if判断语句
+	if (x is true) {
+		we do y
+	}
+或者
+	if (condition) {
+		/*Code*/
+	} else {
+		/*code*/
+	}
+或者
+	if (x == y) {
+	       ..
+	}  
+	if (x > y) {
+	       ...
+	} else {
+	        ....
+	}
+
+b.switch里减少缩进的方式是：case和switch对齐。
+
+示例如下：
+	switch (action) {
+	case KOBJ_ADD:
+	        return "add";
+	case KOBJ_REMOVE:
+	        return "remove";
+	case KOBJ_CHANGE:
+	        return "change";
+	default:
+	        return NULL;
+	}
+	
+c.do while循环：
+
+	do {
+		/*code*/
+	} while (condition);
+		
+2. 空格
+
+2.1. 在if, switch, case, for, do, while之后要使用一个空格，但是不要在sizeof,
+     typeof, alignof,  __attribute__等后面使用，例如：
+
+正确写法：
+	if (x == y) {
+		..
+	} 
+	value = sizeof(char);
+错误写法：
+	if (x == y) {
+		..
+	} 
+	value = sizeof (char);
+		
+2.2. 不要在括号两边写空格。
+
+正确写法：
+	value = sizeof (char);
+错误写法：
+	value = sizeof ( char );
+		
+2.3. 要在 =  +  -  <  >  *  /  %  |  &  ^  <=  >=  ==  !=  ?: 等这些二元和三元
+     操作符前后使用空格，例如：
+
+正确写法：
+	value = x + y;
+	if (value == 0) {
+
+	}
+错误写法：
+	value=x+y;
+	if (value==0) {
+	
+	}
+
+2.4. 不要在"&  *   ~  !  sizeof  typeof  alignof  __attribute__  defined"等一元
+     操作符后面使用空格。例如：
+
+正确写法：
+	value = &x;
+	y = *pointer;
+	z = ~a;
+错误写法：
+	value = & x;
+	y = * pointer;
+	z = ~ a;
+
+2.5. 在"++ —"两边的空格要视情况。例如：
+
+正确写法：
+	value++;
+	value--;
+	++value;
+	--value;
+错误写法：
+	value ++;
+	value --;
+	++ value;
+	-- value;
+2.6. 在". ->"两边都不要使用空格：
+
+正确写法：
+	pid = task_struct->pid;
+	pid = task_struct.pid;
+错误写法：
+	pid = task_struct -> pid;
+	pid = task_struct . pid;
+
+2.7.如果分号用在每行的结束，则其后面不要空格，否则要加空格，逗号的后面要加空格。
+	
+2.8 函数的参数列表的分割符逗号后面使用一个空格。
+
+示例如下：
+int function(int x, int y);
+
+3.注释
+
+3.1. 每个文件开头应该有基本的注释信息。包括：版权声明、作者修改者、完成日期、文
+     件版本、文件的说明、主要函数列表、修改历史(至少包括修改日期和修改内容简述)。
+
+示例如下：
+/*
+ * XiYou Simple HTTP server
+ *
+ * Copyright (c) 2008-~  Xiyou Linux Group
+ *
+ * This source code is released for free distribution under the terms of the
+ * GNU General Public License.
+ *
+ * file name: xhttpd.h
+ * modify date: 2008-11-10
+ * Author: helight.xu@gmail.com
+ * 
+ * Program definitions:
+ */
+	 
+3.2. 注释不应与代码有二义性，代码内的注释应该靠近其注释的代码。一般注释应该在被
+     其注释的代码之下并且有相同的缩进。含有注释的代码应该与其后的语句使用空行隔
+     开。 
+	
+3.3. 注释建议使用传统C风格:
+
+示例如下：
+/*.........*/。
+
+3.4. 注释可以中英文混合，但如果不能准确地使用英文，请使用中文注释。
+
+3.5. 函数注释：一个函数的注释要注明代码功能，和参数说明
+
+3.6. 多行注释如下:
+
+示例如下：
+/*
+ * XXXXXXXXXXXXX
+ * XXXXXXXXXXXXXXXXXXXXXXX
+ */
+ 
+ 3.7. 函数注释
+
+示例如下：
+/*
+ * fun(int argc, ..)
+ * @ argc ...
+ * ...
+ *
+ * Function definitions:
+ *
+ */
+
+4.标识符命名规范
+
+4.1. 变量全部使用小写字母，宏定义全部使用大写，使用下划线"_"分隔单词。
+
+4.2. 在不引起歧义的情况下可以使用缩写。
+
+4.3. 除局部循环变量可以使用i,j,k等字母外，其他变量必须使用有意义的命名。
+
+4.4. 函数名用动词+名词,而变量名使用名词+名词或形容词+名词。
+
+4.5. 只被模块内部调用的函数使用下划线"_"开头,只在本文件中使用的函数，使用static
+     声明。提供给其他文件调用的函数使用字母开头。
+
+4.6. 定义指针变量时，星号应该紧贴在变量名。函数返回值如果是指针类型，星号则应该
+     紧跟在类型名后。
+
+示例如下：
+void **foo(int *p)
+{
+	int *p1;
+	int **q;
+	/**/
+}

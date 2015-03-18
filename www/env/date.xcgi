@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Print out necessary header and empty line
+#echo "Content-type: text/html"
+echo ""
+
+# Print out a title and text. Note the HTML tags in the strings.
+echo "<TITLE>The current date!</TITLE>"
+echo ""
+echo "<H1 align=center>The current date</H1>"
+echo "<hr>"
+echo ""
+echo "Today's date is <b>"
+
+# Echo the date
+date +"%a %b %e, %Y"
+
+# Clean up HTML page. Note the ending bold tag.
+echo "</b>"
+echo "<hr>"
+echo $helight

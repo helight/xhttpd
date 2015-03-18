@@ -1,0 +1,38 @@
+#!/bin/sh
+echo "<html><head>"
+echo ""
+echo "<title>The content you want </title>"
+echo "<meta http-equiv="Content-Style-Type"content="text/css";charset="gb2312">"
+
+echo "</head>"
+echo "<body  background="./img/boo.jpg"; bgcolor="#FFFFFF" >"
+echo "<h1 align=center style="border-style:outset" > The imformation you need is</h1>"
+echo "<div style="margin:4 8em">"
+echo "</div>"
+echo $XY_path
+echo "<hr>"
+echo ""
+if [ -z $XY_path ]
+  then
+   XY_path="/"
+fi
+#Echo the content of the filename
+i=0
+proces=""
+for XY_item in `ps aux`
+do
+	i=`expr $i + 1`
+	#echo "$i"
+	process=$process$XY_item
+	if [ $i == 6 ];then
+		echo "<div>$process</div>"
+		i=0
+		process=""
+	fi
+done
+
+echo "</b>"
+echo "<hr>"
+#echo "</p>"
+echo "</body></html>"
+

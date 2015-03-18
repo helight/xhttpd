@@ -1,0 +1,24 @@
+Developers:
+--------------
+Zhenwen Xu Helight.Xu@gmail.com	: Developer 
+
+Susu susu1399@sina.com		: Developer
+www/index.c
+www/usr/*
+
+Wuting wuting555@gmail.com	: Developer
+www/fs
+list.cgi
+
+Contributors (in no special order):
+-----------------------------------
+胡振碧 huzhenbi05@sina.com	: not member
+www/sys/
+meminfo.c 
+www/ps/
+pmstat.c pmaps.c
+
+Minisky minisky85@gmail.com	: not member
+www/sys/
+cpuinfo.c
+

@@ -1,0 +1,200 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>基于WEB的嵌入式监控系统</title>
+<style type="text/css">
+body,div,ul,li{ margin:0 auto; padding:0;}
+body{ font:12px;  text-align:center;}
+a:link { color:#3da6ff; text-decoration:none; font-weight:bold; }
+a:visited { color: #aaa; text-decoration:none; font-weight:bold;}
+a:hover { color: #c00; text-decoration:underline;  background: #aaa; font-weight:bold;}
+.content{width:100%; height:350px; float:left; background: #ddecfe;}
+ul{ list-style:none;}
+.main{ clear:both; padding:8px; text-align:left;}
+
+#tabs0 {
+ font:12px ;
+ height: 100px;
+ width: 980px;
+ text-align:center;
+}
+.menu0{
+ background: #eceff6;
+ width: 100%;
+}
+.menu0 ul li a:hover{
+ background: #222;
+}
+.menu0 li{
+ display:block;
+ float: left;
+ width:12.5%;
+ cursor:pointer;
+ background: #eceff6;
+
+}
+#main ul{
+ display: none;
+ font:12px ;
+ text-align: left;
+ background: #FFF;
+}
+
+#main ul li{
+ height:25px;
+ font:12px ;
+}
+
+#main ul.block{
+ display: block;
+}
+.tophead{
+	width:980px;
+	height:40px;
+	text-align:center;
+	background-repeat: repeat-x;
+}
+</style>
+<script>
+<!--
+function setTab(m, n)
+{
+	var tli = document.getElementById("menu"+m).getElementsByTagName("li");
+	var mli = document.getElementById("main").getElementsByTagName("ul");
+	for (i = 0;i < tli.length; i++) {
+		tli[i].className=i==n?"hover":"";
+		mli[i].style.display=i==n?"block":"none";
+	}
+}
+-->
+</script>
+</head>
+
+<body>
+<div class="tophead"><h1>基于WEB的嵌入式监控系统</h1></div>
+<div align="center">
+
+<div align="left" class="tophead"></div>
+
+<div id="tabs0"><strong>
+<ul class="menu0" id="menu0">
+	<li onclick="setTab(0,0)" class="hover">
+	<img src="img/home.png" heigth="40px" border="0"><br>文件管理</li>
+	<li onclick="setTab(0,1)">
+	<img src="img/dev.png" heigth="40px" border="0"><br>设备管理</li>
+	<li onclick="setTab(0,2)">
+	<img src="img/process.png" heigth="40px" border="0"><br>进程信息</li>
+	<li onclick="setTab(0,3)">
+	<img src="img/user.png" heigth="40px" border="0"><br>用户管理</li>
+	<li onclick="setTab(0,4)">
+	<img src="img/network.png" heigth="40px" border="0"><br>网络管理</li>
+	<li onclick="setTab(0,5)">
+	<img src="img/power.png" heigth="40px" border="0"><br>PowerTop</li>
+	<li onclick="setTab(0,6)">
+	<img src="img/env.png" heigth="40px" border="0"><br>系统环境</li>
+	<li onclick="setTab(0,7)">
+	<img src="img/boot.png" heigth="40px" border="0"><br>启动管理</li>
+</ul>
+</strong></div>
+
+<div>
+<table width=980px; border=1px;>
+<tr style="border: 1px;">
+<td width=180px align=left valign="top" style="border: 1;">
+<div class="main" id="main">
+<ul class="block">
+	<li><strong>文件系统管理</strong></li><br>
+	<li><a href="fs/list.xcgi" title="os-fs" target="osinfo">
+	根文件系统</a></li>
+	<li><a href="fs/list.xcgi?XY_path=/home" title="os-fs" target="osinfo">
+	用户目录</a></li>
+	<br><li><strong>DEMO程序</strong></li>
+	<li><a href="demo/get.xcgi" title="demo-shell" target="osinfo">
+	XCGI测试</a></li>
+	<li><a href="demo/test.xcgi" title="demo-shell" target="osinfo">
+	XCGI测试2</a></li>
+	<li><a href="demo/post.xcgi" title="demo-shell" target="osinfo">
+	XCGI POST</a></li>
+	<li><a href="demo/get.cgi" title="demo-shell" target="osinfo">
+	CGI GET</a></li>
+	<li><a href="demo/spost.cgi" title="demo-shell" target="osinfo">
+	CGI POST</a></li>
+</ul>
+<ul>
+	<li><strong>设备管理</strong></li><br>
+	<li><a href="disk/partition.cgi" title="os-partitions" target="osinfo">
+	磁盘信息</a></li>
+	<li><a href="disk/mtdblock.cgi" title="os-mtdblock" target="osinfo">
+	磁盘信息2</a></li>
+	<li><a href="dev/led.xcgi" title="os-env" target="osinfo">
+	控制板LED</a></li>
+</ul>
+<ul>
+	<li><strong>进程管理</strong></li><br>
+	<li><a href="ps/pmstat.cgi" title="os-pmstat" target="osinfo">
+	进程内存1</a></li>
+	<li><a href="ps/pmaps.cgi" title="os-pmstat" target="osinfo">
+	进程数据段</a></li>
+	<li><a href="ps/promem.cgi" title="os-promem" target="osinfo">
+	进程内存2</a></li>
+	<li><a href="env/date.xcgi" title="os-env" target="osinfo">
+	date</a></li>
+</ul>
+<ul>
+	<li><strong>用户管理</strong></li><br>
+	<li><a href="usr/userinfo.cgi" title="os-users" target="osinfo">
+	系统用户信息</a></li>
+	<li><a href="usr/adduser.htm" title="os-users" target="osinfo">
+	添加管理用户</a></li>
+	<li><a href="usr/passwdupdate.htm" title="os-users" target="osinfo">
+	修改管理用户</a></li>
+	<li><a href="env/date.xcgi" title="os-env" target="osinfo">
+	date</a></li>
+</ul>
+<ul>
+	<li><strong>网络管理</strong></li><br>
+	<li><a href="net/mac.cgi" title="os-mac" target="osinfo">
+	网卡MAC</a></li>
+	<li><a href="net/netdev.cgi" title="os-netdev" target="osinfo">
+	网卡其它信息</a></li>
+	<li><a href="net/ifcon.htm" title="os-env" target="osinfo">
+	IP地址配置</a></li>
+</ul>
+<ul>
+	<li><strong>省电管理</strong></li><br>
+	<li><a href="sys/pspower.cgi" title="os-pspower" target="osinfo">
+	进程省电</a></li>
+</ul>
+<ul>
+	<li><strong>系统环境</strong></li><br>
+	<li><a href="sys/osversion.cgi" title="os-version" target="osinfo">
+	系统信息</a></li>
+	<li><a href="sys/osfs.cgi" title="os-irqinfo" target="osinfo">
+	文件系统信息</a></li>
+	<li><a href="sys/cpuinfo.cgi" title="os-cpuinfo" target="osinfo">
+	处理器信息</a></li>
+	<li><a href="sys/meminfo.cgi" title="os-meminfo" target="osinfo">
+	内存信息</a></li>
+	<li><a href="sys/irqinfo.cgi" title="os-irqinfo" target="osinfo">
+	IRQ信息</a></li>
+	<li><a href="sys/systime.cgi" title="os-irqinfo" target="osinfo">
+	系统时间</a></li>
+</ul>
+<ul>
+	<li><strong>启动管理</strong></li><br>
+	<li><a href="demo/shell.cgi" title="demo-shell" target="osinfo">
+	demo-shell </a></li>
+	<li><a href="demo/post.cgi" title="demo-shell" target="osinfo">
+	post_test </a></li>
+</ul>
+</div>
+</td>
+
+<td valign="top">
+	<iframe name="osinfo" src="main.htm" width="800" height="500"></iframe>
+</td></tr></table>
+<div>
+<div>2009-~ Designed by <a href="http://zhwen.org">Helight</a></div>
+<div ><em>Established 2009 Xi'an, China</em></div>
+</div></div>
+</div></body></html>

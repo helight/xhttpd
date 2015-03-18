@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>基于WEB的嵌入式监控系统</title>
+<style type="text/css">
+<!--
+body{
+	background-color:#fff;
+	margin: 0px;
+	padding:0px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif, "宋体";
+	color: #000000;
+}
+.login_g{
+	width:327px;
+	height:320px;
+	text-align:center;
+	border:1px solid #dadada;
+	background-image: url(../img/loginbg.gif);
+	background-repeat: repeat-x;
+	}
+	
+.input_login{
+    width:182px;
+    height:25px;
+    border:1px solid #86a1bf;
+    font-size:14px;
+    padding-left:6px;
+	line-height:23px;
+	font-family:Arial, Helvetica, sans-serif,"宋体";
+	
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-
+TOP: 0px
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-
+RIGHT-WIDTH: 0px
+}
+A {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #d90000; TEXT-DECORATION: none
+}
+.input {
+	BORDER-RIGHT: #86a1bf 1px solid;
+	BORDER-TOP: #86a1bf 1px solid;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 16px;
+	BORDER-LEFT: #86a1bf 1px solid;
+	WIDTH: 185px;
+	LINE-HEIGHT: 25px;
+	BORDER-BOTTOM: #86a1bf 1px solid;
+	HEIGHT: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.btn {
+	BORDER-RIGHT: #aec5d5 1px solid; BORDER-TOP: #aec5d5 1px solid; MARGIN-TOP: 5px; 
+FONT-WEIGHT: bold; FONT-SIZE: 14px; BACKGROUND: url(../images/imgRight-2.gif) #3b7394 repeat-x 
+0px -22px; BORDER-LEFT: #aec5d5 1px solid; WIDTH: 188px; CURSOR: pointer; COLOR: #002973; 
+LINE-HEIGHT: 29px; BORDER-BOTTOM: #aec5d5 1px solid; HEIGHT: 29px
+}
+.H10,.H14{
+	color: #203a87;
+	text-align: left;
+	margin-top: 17px;
+	margin-left: 22px;
+	text-align: justify;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+}
+.H14{font-weight:normal;}
+.f12{font-size:12px;color:#6D98C3}
+-->
+</style>
+</head><body>
+<div style="height:90px;"></div>
+<div align=center>
+<div class="login_g" id="loginN" >
+<p class="H10">管理员信息修改</p>
+<form name="loginform" id="loginform" action="passwdupdate.xcgi" method="post">
+    <table border="0" cellpadding="0" cellspacing="10" width="285">
+      <tbody><tr>
+        <td><img src="img/loginh2.gif" height="2" width="287"></td>
+      </tr>
+      <tr>
+        <td><table align="center" border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+              <td class="H14" height="40" width="75">用户名：</td>
+              <td align="left"><label>
+                <input class="input" id="XY_id" name="XY_id">
+                </label></td>
+            </tr>
+            <tr>
+              <td class="H14" align="right" height="20">&nbsp;</td>
+              <td class="f12" align="left" valign="top"></td>
+            </tr>
+            <tr>
+              <td class="H14" align="right" height="40">新密码：</td>
+              <td align="left"><input class="input" id="New_XY_pwd" maxlength="20" name="New_XY_pwd" type="password"></td>
+            </tr>
+            <tr>
+              <td class="H14" align="right" height="20">&nbsp;</td>
+              <td class="f12" align="left" valign="top"></td>
+            </tr>
+            <tr>
+              <td class="H14" align="right" height="40">重复：</td>
+              <td align="left"><input class="input" id="Re_New_XY_pwd" maxlength="20" name="Re_New_XY_pwd" type="password"></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td align="left"></td>
+            </tr>
+            <tr>
+              <td height="40">&nbsp;</td>
+              <td align="left"><input class="btn" id="loginBtn" value="提  交" type="submit"></td>
+            </tr>
+       </tbody></table>
+</form>
+</td>
+      </tr>
+      <tr>
+        <td><img src="img/login_linet.gif" height="1" width="287"></td>
+      </tr>
+    </tbody></table>
+</div>
+</div>
+</body></html>
